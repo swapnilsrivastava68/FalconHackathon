@@ -23,15 +23,30 @@ export class FormService {
     ) {
         this.stepOne.subscribe(form =>
             form.valueChanges.subscribe(val => {
-                this.mainForm.value.firstName = val.firstName
-                this.mainForm.value.lastName = val.lastName
-                this.mainForm.value.extraName = val.extraName
+                this.mainForm.value.amount = val.amount
+                this.mainForm.value.term = val.term
+                this.mainForm.value.usage = val.usage
             })
         )
         this.stepTwo.subscribe(form =>
             form.valueChanges.subscribe(val => {
-                // console.log(val)
-                this.mainForm.value.address = val.address
+                this.mainForm.value.companyName = val.companyName
+                this.mainForm.value.companyAddress = val.companyAddress
+                this.mainForm.value.legalStructure = val.legalStructure
+                this.mainForm.value.revenue = val.revenue
+                this.mainForm.value.commerialRegister = val.commerialRegister
+            })
+        )
+        this.stepTwo.subscribe(form =>
+            form.valueChanges.subscribe(val => {
+                this.mainForm.value.firstName = val.firstName
+                this.mainForm.value.lastName = val.lastName
+                this.mainForm.value.personalAddress = val.personalAddress
+                this.mainForm.value.citizenship = val.citizenship
+                this.mainForm.value.dob = val.dob
+                this.mainForm.value.phone = val.phone
+                this.mainForm.value.email = val.email
+                this.mainForm.value.passport = val.passport
             })
         )
     }
