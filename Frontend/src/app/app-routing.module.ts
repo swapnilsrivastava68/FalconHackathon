@@ -5,8 +5,8 @@ import { ApplyLoanComponent } from './components/apply-loan/apply-loan.component
 
 const routes: Routes = [
   { path: '', component: ApplyLoanComponent },
-  { path: 'app-apply-loan', component: ApplyLoanComponent },
-  { path: 'app-loan-status', component: LoanStatusComponent },
+  { path: 'loan', component: ApplyLoanComponent },
+  { path: 'status', component: LoanStatusComponent },
 ];
 
 @NgModule({
