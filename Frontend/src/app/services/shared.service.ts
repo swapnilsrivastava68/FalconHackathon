@@ -27,8 +27,8 @@ export class SharedService {
     return this.http.get(`${this.baseUrl}/loanApplicationStatus/${loanNumber}`);
   }
 
-  saveLoanApplication(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/countries`);
+  saveLoanApplication(data): Observable<any> {
+    return this.http.post(`${this.baseUrl}/loanApplications`, data);
   }
 
 }

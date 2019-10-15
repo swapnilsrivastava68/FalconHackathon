@@ -1,7 +1,7 @@
 package com.hcl.hackathon.exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
-//Eception Handling Statergy
+//Exception Handling Statergy
 //By Debasis
 
 @ResponseStatus(value = HttpStatus.NOT_FOUND)
