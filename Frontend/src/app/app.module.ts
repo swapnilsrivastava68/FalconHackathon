@@ -19,29 +19,121 @@ import { ApplyLoanComponent } from './components/apply-loan/apply-loan.component
 import { ApplicationStatusComponent } from './components/application-status/application-status.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+// import './polyfills';
+
+import { CdkTableModule } from '@angular/cdk/table';
+import { HttpClientModule } from '@angular/common/http';
+// import {NgModule} from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  MatAutocompleteModule,
+  MatBadgeModule,
+  MatBottomSheetModule,
+  MatButtonToggleModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatInputModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatTableModule,
+  MatTabsModule,
+  MatTooltipModule,
+  MatTreeModule,
+  MatFormFieldModule,
+} from '@angular/material';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { LoanDetailsComponent } from './components/apply-loan/steps-components/loan-details/loan-details.component';
+import { CorporateDetailsComponent } from './components/apply-loan/steps-components/corporate-details/corporate-details.component';
+import { PersonalDetailsComponent } from './components/apply-loan/steps-components/personal-details/personal-details.component';
+import { TextInputComponent } from './components/apply-loan/steps-components/text-input/text-input.component';
+
+import { StepperOverviewComponent } from './components/apply-loan/steps-components/stepper-overview/stepper-overview.component';
+// import { StepOneComponent } from './app/step-one/step-one.component';
+// import { StepTwoComponent } from './app/step-two/step-two.component'
+// import { TextInputComponent } from './app/text-input/text-input.component'
+
 @NgModule({
   declarations: [
     AppComponent,
     MainNavComponent,
     LoanStatusComponent,
     ApplyLoanComponent,
-    ApplicationStatusComponent
+    ApplicationStatusComponent,
+    StepperOverviewComponent,
+    LoanDetailsComponent,
+    CorporateDetailsComponent,
+    PersonalDetailsComponent,
+    TextInputComponent
+  ],
+  exports: [
+    CdkTableModule,
+    MatAutocompleteModule,
+    MatBadgeModule,
+    MatBottomSheetModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatStepperModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatTreeModule
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
+    MatFormFieldModule,
     MatListModule,
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
     MatStepperModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
