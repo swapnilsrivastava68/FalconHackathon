@@ -10,17 +10,17 @@
 
   <mat-form-field>
     <mat-select formControlName="usage" placeholder="Usage" style="min-width:200px;">
-      <mat-option
-        *ngFor="let num of ['Current Assets', 'Current Assets', 'Debt Restructuring', 'Investment in Fixed Assets', 'Growth capital', 'Other (Specify)']">
-        {{ num }}</mat-option>
+      <mat-option [value]="us.name"
+        *ngFor="let us of usageList">
+        {{ us.name || 'Not Available' }}</mat-option>
     </mat-select>
   </mat-form-field>
 
-  <mat-form-field *ngIf="true">
-    <input matInput placeholder="Please specify the Usage" formControlName="usage" required>
-  </mat-form-field>
+  <!-- <mat-form-field *ngIf="step.value.usage === 'Other (Specify)'">
+    <input matInput placeholder="Please specify the Usage" [(ngModel)]="otherUsage">
+  </mat-form-field> -->
   <div>
 
-    <button mat-button matStepperNext>Next</button>
+    <button [disabled]="!step.valid" (click)="nextClicked()" mat-button matStepperNext>Next</button>
   </div>
 </form>
