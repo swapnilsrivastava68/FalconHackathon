@@ -1,13 +1,40 @@
 <form *ngIf="step" [formGroup]="step">
     <ng-template matStepLabel>Fill out your name</ng-template>
-    <mat-form-field>
-        <input matInput placeholder="First name" formControlName="firstName" required>
-    </mat-form-field>
-    <mat-form-field>
-        <input matInput placeholder="Last name" formControlName="lastName" required>
-    </mat-form-field>
-    <app-text-input (outputText)="change($event)"></app-text-input>
-
+    <div fxLayout="column" fxLayoutAlign="start start">
+      <div fxLayoutGap="20px" fxLayout="row" fxLayoutAlign="start center">
+          <mat-form-field>
+              <input matInput placeholder="First name" formControlName="firstName" required>
+          </mat-form-field>
+          <mat-form-field>
+              <input matInput placeholder="Last name" formControlName="lastName" required>
+          </mat-form-field>
+      </div>
+      <mat-form-field>
+          <input matInput placeholder="Address" formControlName="lastName" required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Favorite food</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+          <input matInput placeholder="Phone" formControlName="lastName" required>
+      </mat-form-field>
+      <mat-form-field>
+          <input matInput placeholder="Email" formControlName="lastName" required>
+      </mat-form-field>
+      <mat-form-field>
+          <input matInput placeholder="Passport" formControlName="lastName" required>
+      </mat-form-field>
+    </div>
     <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button matStepperNext>Next</button>

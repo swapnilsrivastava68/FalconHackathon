@@ -17,7 +17,7 @@ export class StepperOverviewComponent {
     public formService: FormService,
     private fb: FormBuilder
   ) {
-    this.myForm = this.formService.mainForm.value
+    this.myForm = this.formService.mainForm.value;
   }
 
   keys(): Array<string> {

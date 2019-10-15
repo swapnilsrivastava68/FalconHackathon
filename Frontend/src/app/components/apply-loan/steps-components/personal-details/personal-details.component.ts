@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { FormService } from '../form-service';
 
+export interface Food {
+  value: string;
+  viewValue: string;
+}
+
 @Component({
   selector: 'app-personal-details',
   templateUrl: './personal-details.component.html',
@@ -10,6 +15,11 @@ import { FormService } from '../form-service';
 export class PersonalDetailsComponent implements OnInit {
 
   step: FormGroup;
+  foods: Food[] = [
+    {value: 'steak-0', viewValue: 'Steak'},
+    {value: 'pizza-1', viewValue: 'Pizza'},
+    {value: 'tacos-2', viewValue: 'Tacos'}
+  ];
 
   constructor(
     private _formBuilder: FormBuilder,
@@ -20,12 +30,13 @@ export class PersonalDetailsComponent implements OnInit {
       lastName: ['', Validators.required],
       extraName: ''
     });
-    this.formService.stepReady(this.step, 'one')
+    this.formService.stepReady(this.step, 'one');
   }
 
   change(title) {
-    this.step.patchValue({ extraName: title })
+    this.step.patchValue({ extraName: title });
   }
+
   ngOnInit() {
   }
 

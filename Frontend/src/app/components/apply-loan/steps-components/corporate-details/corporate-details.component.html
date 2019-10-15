@@ -1,28 +1,32 @@
 <form *ngIf="step" [formGroup]="step">
   <ng-template matStepLabel>Fill out your name</ng-template>
-  <mat-form-field>
-    <input matInput placeholder="First name" formControlName="firstName" required>
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput placeholder="Last name" formControlName="lastName" required>
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput placeholder="Address" formControlName="lastName" required>
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput placeholder="Legal Structure" formControlName="lastName" required>
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput placeholder="Revenue of Last year" formControlName="lastName" required>
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Favorite food</mat-label>
-    <mat-select>
-      <mat-option *ngFor="let food of foods" [value]="food.value">
-        {{food.viewValue}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+  <div fxLayout="column" fxLayoutAlign="start start">
+      <div fxLayoutGap="20px" fxLayout="row" fxLayoutAlign="start center">
+        <mat-form-field>
+          <input matInput placeholder="First name" formControlName="firstName" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Last name" formControlName="lastName" required>
+        </mat-form-field>
+      </div>
+      <mat-form-field>
+        <input matInput placeholder="Address" formControlName="lastName" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Legal Structure" formControlName="lastName" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Revenue of Last year" formControlName="lastName" required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Favorite food</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  </div>
   <div>
     <button mat-button matStepperPrevious>Back</button>
     <button mat-button matStepperNext>Next</button>
