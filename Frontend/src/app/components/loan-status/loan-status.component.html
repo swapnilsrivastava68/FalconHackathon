@@ -8,16 +8,39 @@
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          <form class="example-form">
-              <div fxLayout="column" fxLayoutAlign="space-around center">
-                  <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Loan Number" value="">
-                  </mat-form-field>
-                  <button mat-raised-button color="primary">Check Loan Status</button>
-              </div>
-          </form>
+          <!-- <form class="example-form" >
+              
+          </form> -->
+          <div fxLayout="column" fxLayoutAlign="space-around center">
+            <mat-form-field class="example-full-width">
+              <input [(ngModel)]="loanNumber" matInput placeholder="Loan Number" value="">
+            </mat-form-field>
+            <button (click)="checkLoanStatus()" mat-raised-button color="primary">Check Loan Status</button>
+          </div>
+        </mat-card-content>
+        <mat-card-content class="dashboard-card-content" *ngIf="isDataFetched">
+          <mat-card-title>
+            Loan ID: <mat-label>{{loanDetails? loanDetails.id: 'NA' }}</mat-label><br>
+          </mat-card-title>
+          <mat-card-title>
+            Amount: <mat-label>{{loanDetails? loanDetails.amount: 'NA' }}</mat-label><br>
+          </mat-card-title>
+          <mat-card-title>
+            Term: <mat-label>{{loanDetails? loanDetails.term: 'NA' }}</mat-label><br>
+
+          </mat-card-title>
+
         </mat-card-content>
       </mat-card>
+      <!-- <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Loan Application Details
+          </mat-card-title>
+        </mat-card-header>
+        
+      </mat-card> -->
     </mat-grid-tile>
+
   </mat-grid-list>
 </div>

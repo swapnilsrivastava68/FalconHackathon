@@ -15,11 +15,23 @@ export class FormService {
     stepThree: Observable<FormGroup> = this.stepTwoSource.asObservable();
 
     mainForm: FormGroup = this._formBuilder.group({
-        // firstName: '',
-        // lastName: '',
-        // extraName: '',
-        // address: ''
-    });
+        amount: '',
+        term: '',
+        usage: '',
+        companyName: '',
+        companyAddress: '',
+        legalStructure: '',
+        revenue: '',
+        commerialRegister: '',
+        firstName: '',
+        lastName: '',
+        personalAddress: '',
+        citizenship: '',
+        dob: '',
+        phone: '',
+        email: '',
+        passport: ''
+    })
 
     constructor(
         private _formBuilder: FormBuilder
