@@ -33,7 +33,7 @@ export class PersonalDetailsComponent implements OnInit {
       email: ['', Validators.required],
       passport: ['', Validators.required]
     });
-    this.formService.stepReady(this.step, 'one');
+    this.formService.stepReady(this.step, 'three');
   }
 
   ngOnInit() {

@@ -27,7 +27,7 @@ export class LoanDetailsComponent implements OnInit {
       term: ['', Validators.required],
       usage: ['', Validators.required]
     });
-    this.formService.stepReady(this.step, 'two');
+    this.formService.stepReady(this.step, 'one');
   }
 
   ngOnInit() {
