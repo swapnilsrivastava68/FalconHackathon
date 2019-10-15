@@ -27,7 +27,7 @@ export class StepperOverviewComponent {
   }
   applyLoan() {
     this.myForm;
-    this.sharedService.saveLoanApplication().subscribe(data => {
+    this.sharedService.saveLoanApplication(this.myForm).subscribe(data => {
 
     }, error => {
 
