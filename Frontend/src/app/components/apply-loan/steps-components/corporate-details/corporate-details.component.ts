@@ -22,12 +22,9 @@ export class CorporateDetailsComponent implements OnInit {
       revenue: ['', Validators.required],
       commerialRegister: ['', Validators.required]
     });
-    this.formService.stepReady(this.step, 'one')
+    this.formService.stepReady(this.step, 'one');
   }
 
-  change(title) {
-    this.step.patchValue({ extraName: title })
-  }
   ngOnInit() {
   }
 
