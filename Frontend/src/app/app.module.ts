@@ -82,6 +82,7 @@ import { StepperOverviewComponent } from './components/apply-loan/steps-componen
     BrowserAnimationsModule,
     LayoutModule,
     FormsModule,
+    MatSelectModule,
     ReactiveFormsModule,
     MatToolbarModule,
     MatButtonModule,
