@@ -11,7 +11,13 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import static springfox.documentation.builders.PathSelectors.regex;
-
+/***
+ * 
+ * @author Abhinay(abhinay.neekhra85@gmail.com)
+ * 
+ * This class is used for Swagger Congiguration to show the rest api call in brouser
+ *
+ */
 @EnableSwagger2
 @Configuration
 public class SwaggerConfig {
