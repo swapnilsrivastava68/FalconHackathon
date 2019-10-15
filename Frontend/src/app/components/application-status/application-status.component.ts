@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { map } from 'rxjs/operators';
 
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-application-status',
   templateUrl: './application-status.component.html',
@@ -23,9 +25,22 @@ export class ApplicationStatusComponent implements OnInit {
     })
   );
 
-  constructor(private breakpointObserver: BreakpointObserver) { }
+  applicationFormGroup = this._formBuilder.group({
+    applicationNumber: ['', Validators.required],
+  });
+
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private _formBuilder: FormBuilder,
+    ) {
+    }
 
   ngOnInit() {
+
+  }
+
+  submitApplication() {
+      console.log('application form', this.applicationForm.value);
   }
 
 }
