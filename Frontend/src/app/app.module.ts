@@ -18,6 +18,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { LoanStatusComponent } from './components/loan-status/loan-status.component';
 import { ApplyLoanComponent } from './components/apply-loan/apply-loan.component';
 import { ApplicationStatusComponent } from './components/application-status/application-status.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ApplicationStatusComponent } from './components/application-status/appl
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
-    MatStepperModule
+    MatStepperModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
