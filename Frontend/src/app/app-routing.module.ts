@@ -8,7 +8,7 @@ import { ApplyLoanComponent } from './components/apply-loan/apply-loan.component
 
 
 const routes: Routes = [
-  // { path: '', component: MainNavComponent },
+  { path: '', component: ApplyLoanComponent },
   { path: 'app-apply-loan', component: ApplyLoanComponent },
   { path: 'app-loan-status', component: LoanStatusComponent },
 ];
