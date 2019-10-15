@@ -37,11 +37,9 @@ export class LoanDetailsComponent implements OnInit {
 
     });
   }
-  nextClicked() {
-  }
-  currencyEntered(val) {
-    debugger;
 
-  }
+  nextClicked() { }
+
+  currencyEntered(val) { }
 
 }

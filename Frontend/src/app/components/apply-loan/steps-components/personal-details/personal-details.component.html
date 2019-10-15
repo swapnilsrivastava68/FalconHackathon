@@ -37,6 +37,6 @@
     </div>
     <div>
         <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <button [disabled]="!step.valid" mat-button matStepperNext>Next</button>
     </div>
 </form>

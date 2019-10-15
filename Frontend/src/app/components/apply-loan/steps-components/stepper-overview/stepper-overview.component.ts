@@ -26,7 +26,6 @@ export class StepperOverviewComponent {
     return Object.keys(this.myForm);
   }
   applyLoan() {
-    debugger;
     this.myForm;
     this.sharedService.saveLoanApplication().subscribe(data => {
 
