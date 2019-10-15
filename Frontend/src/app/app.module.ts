@@ -61,9 +61,6 @@ import { PersonalDetailsComponent } from './components/apply-loan/steps-componen
 import { TextInputComponent } from './components/apply-loan/steps-components/text-input/text-input.component';
 
 import { StepperOverviewComponent } from './components/apply-loan/steps-components/stepper-overview/stepper-overview.component';
-// import { StepOneComponent } from './app/step-one/step-one.component';
-// import { StepTwoComponent } from './app/step-two/step-two.component'
-// import { TextInputComponent } from './app/text-input/text-input.component'
 
 @NgModule({
   declarations: [
@@ -78,43 +75,7 @@ import { StepperOverviewComponent } from './components/apply-loan/steps-componen
     PersonalDetailsComponent,
     TextInputComponent
   ],
-  exports: [
-    CdkTableModule,
-    MatAutocompleteModule,
-    MatBadgeModule,
-    MatBottomSheetModule,
-    MatButtonModule,
-    MatButtonToggleModule,
-    MatCardModule,
-    MatCheckboxModule,
-    MatChipsModule,
-    MatStepperModule,
-    MatDatepickerModule,
-    MatDialogModule,
-    MatDividerModule,
-    MatExpansionModule,
-    MatGridListModule,
-    MatIconModule,
-    MatListModule,
-    MatMenuModule,
-    MatNativeDateModule,
-    MatPaginatorModule,
-    MatProgressBarModule,
-    MatProgressSpinnerModule,
-    MatRadioModule,
-    MatRippleModule,
-    MatSelectModule,
-    MatSidenavModule,
-    MatSliderModule,
-    MatSlideToggleModule,
-    MatSnackBarModule,
-    MatSortModule,
-    MatTableModule,
-    MatTabsModule,
-    MatToolbarModule,
-    MatTooltipModule,
-    MatTreeModule
-  ],
+  exports: [],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -134,7 +95,8 @@ import { StepperOverviewComponent } from './components/apply-loan/steps-componen
     MatStepperModule,
     FlexLayoutModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
