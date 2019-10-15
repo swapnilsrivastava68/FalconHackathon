@@ -133,7 +133,8 @@ import { StepperOverviewComponent } from './components/apply-loan/steps-componen
     MatMenuModule,
     MatStepperModule,
     FlexLayoutModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

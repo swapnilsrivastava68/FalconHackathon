@@ -13,7 +13,7 @@ export class LoanStatusComponent implements OnInit {
     map(({ matches }) => {
       if (matches) {
         return [
-          { title: 'Card 1', cols: 1, rows: 1 },
+          { title: 'Card 1', cols: 2, rows: 1 },
         ];
       }
 
