@@ -16,9 +16,11 @@ export class CorporateDetailsComponent implements OnInit {
     private formService: FormService
   ) {
     this.step = this._formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      extraName: ''
+      companyName: ['', Validators.required],
+      companyAddress: ['', Validators.required],
+      legalStructure: ['', Validators.required],
+      revenue: ['', Validators.required],
+      commerialRegister: ['', Validators.required]
     });
     this.formService.stepReady(this.step, 'one')
   }

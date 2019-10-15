@@ -26,7 +26,12 @@ export class PersonalDetailsComponent implements OnInit {
     this.step = this._formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      extraName: ''
+      personalAddress: ['', Validators.required],
+      citizenship: ['', Validators.required],
+      dob: ['', Validators.required],
+      phone: ['', Validators.required],
+      email: ['', Validators.required],
+      passport: ['', Validators.required]
     });
     this.formService.stepReady(this.step, 'one');
   }

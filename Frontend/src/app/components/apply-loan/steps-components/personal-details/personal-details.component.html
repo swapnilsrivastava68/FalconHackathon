@@ -10,29 +10,29 @@
           </mat-form-field>
       </div>
       <mat-form-field>
-          <input matInput placeholder="Address" formControlName="lastName" required>
+          <input matInput placeholder="Address" formControlName="personalAddress" required>
       </mat-form-field>
       <mat-form-field>
         <mat-label>Citizenship</mat-label>
-        <mat-select>
+        <mat-select  formControlName="citizenship" >
           <mat-option *ngFor="let country of countries" [value]="country.id">
             {{country.name}}
           </mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field>
-        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date"  formControlName="dob">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
       <mat-form-field>
-          <input matInput placeholder="Phone" formControlName="lastName" required>
+          <input matInput placeholder="Phone" formControlName="phone" required>
       </mat-form-field>
       <mat-form-field>
-          <input matInput placeholder="Email" formControlName="lastName" required>
+          <input matInput placeholder="Email" formControlName="email" required>
       </mat-form-field>
       <mat-form-field>
-          <input matInput placeholder="Passport" formControlName="lastName" required>
+          <input matInput placeholder="Passport" formControlName="passport" required>
       </mat-form-field>
     </div>
     <div>
