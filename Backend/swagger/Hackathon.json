@@ -72,9 +72,9 @@ paths:
     get:
       tags:
       - "Loan"
-      summary: "Find pet by ID"
-      description: "Returns a single pet"
-      operationId: "getPetById"
+      summary: "Get Loan Application Details with Status"
+      description: "Return Loan Application"
+      operationId: "getLoanApplicationStatus"
       produces:
       - "application/json"
       parameters:
