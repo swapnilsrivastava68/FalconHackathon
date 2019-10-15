@@ -18,6 +18,11 @@ export class SharedService {
     return this.http.get(`${this.baseUrl}/countries`);
   }
 
+  getApplication(applicationNumber: number): Observable<any> {
+    const applicationUrl = 'applicationStatus';
+    return this.http.get(`${this.baseUrl}/${applicationUrl}?applicationNumber:${applicationNumber}`);
+  }
+
   getLoanStatus(loanNumber): Observable<any> {
     return this.http.get(`${this.baseUrl}/loanApplicationStatus/${loanNumber}`);
   }

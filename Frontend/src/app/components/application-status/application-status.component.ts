@@ -3,6 +3,7 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { map } from 'rxjs/operators';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-application-status',
@@ -29,9 +30,12 @@ export class ApplicationStatusComponent implements OnInit {
     applicationNumber: ['', Validators.required],
   });
 
+  applicationData;
+
   constructor(
     private breakpointObserver: BreakpointObserver,
     private _formBuilder: FormBuilder,
+    private sharedServices: SharedService
     ) {
     }
 
@@ -40,7 +44,13 @@ export class ApplicationStatusComponent implements OnInit {
   }
 
   submitApplication() {
-      console.log('application form', this.applicationForm.value);
+      // TODO: remove console
+      console.log('application form', this.applicationFormGroup.value);
+
+      this.sharedServices.getApplication().subscribe((application) => {
+        this.applicationData = application;
+      })
+
   }
 
 }
