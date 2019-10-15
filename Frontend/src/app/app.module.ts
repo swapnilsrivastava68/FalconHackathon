@@ -103,7 +103,7 @@ import { StepperOverviewComponent } from './components/apply-loan/steps-componen
     MatProgressSpinnerModule,
     MatRadioModule,
     MatRippleModule,
-    MatSelectModule,
+ 
     MatSidenavModule,
     MatSliderModule,
     MatSlideToggleModule,
@@ -121,6 +121,7 @@ import { StepperOverviewComponent } from './components/apply-loan/steps-componen
     BrowserAnimationsModule,
     LayoutModule,
     FormsModule,
+    MatSelectModule,
     ReactiveFormsModule,
     MatToolbarModule,
     MatButtonModule,

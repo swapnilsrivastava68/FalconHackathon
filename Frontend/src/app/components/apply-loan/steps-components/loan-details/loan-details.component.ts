@@ -16,7 +16,9 @@ export class LoanDetailsComponent implements OnInit {
     private formService: FormService
   ) {
     this.step = this._formBuilder.group({
-      address: ['', Validators.required]
+      amount: ['', Validators.required],
+      term: ['', Validators.required],
+      usage: ['', Validators.required]
     });
     this.formService.stepReady(this.step, 'two')
   }
