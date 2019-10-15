@@ -1,7 +1,7 @@
 <form *ngIf="step" [formGroup]="step">
   <ng-template matStepLabel>Fill out your address</ng-template>
   <mat-form-field>
-    <input matInput placeholder="Amount" formControlName="amount" required>
+    <input matInput placeholder="Amount" (keyup)="currencyEntered($event.target.value)" formControlName="amount" required>
   </mat-form-field>
 
   <mat-form-field>

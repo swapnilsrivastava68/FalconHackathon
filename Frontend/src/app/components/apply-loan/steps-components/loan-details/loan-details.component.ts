@@ -33,13 +33,15 @@ export class LoanDetailsComponent implements OnInit {
   ngOnInit() {
     this.sharedService.getUsages().subscribe(usages => {
       this.usageList = usages;
-      // this.usageList.push({ id: 2, name: 'Debt Restructuring' });
-      // this.usageList.push({ id: 3, name: 'Other (Specify)' });
     }, error => {
 
     });
   }
   nextClicked() {
+  }
+  currencyEntered(val) {
+    debugger;
+
   }
 
 }

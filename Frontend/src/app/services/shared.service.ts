@@ -18,4 +18,8 @@ export class SharedService {
     return this.http.get(`${this.baseUrl}/countries`);
   }
 
+  saveLoanApplication(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/countries`);
+  }
+
 }
