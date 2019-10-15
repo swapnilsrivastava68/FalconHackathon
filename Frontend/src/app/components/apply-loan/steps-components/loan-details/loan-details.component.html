@@ -1,9 +1,26 @@
 <form *ngIf="step" [formGroup]="step">
-    <ng-template matStepLabel>Fill out your address</ng-template>
-    <mat-form-field>
-      <input matInput placeholder="Address" formControlName="address" required>
-    </mat-form-field>
-    <div>
-      <button mat-button matStepperNext>Next</button>
-    </div>
-  </form>
+  <ng-template matStepLabel>Fill out your address</ng-template>
+  <mat-form-field>
+    <input matInput placeholder="Amount" formControlName="amount" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Term" formControlName="term" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select formControlName="usage" placeholder="Usage" style="min-width:200px;">
+      <mat-option
+        *ngFor="let num of ['Current Assets', 'Current Assets', 'Debt Restructuring', 'Investment in Fixed Assets', 'Growth capital', 'Other (Specify)']">
+        {{ num }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field *ngIf="true">
+    <input matInput placeholder="Please specify the Usage" formControlName="usage" required>
+  </mat-form-field>
+  <div>
+
+    <button mat-button matStepperNext>Next</button>
+  </div>
+</form>
