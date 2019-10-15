@@ -13,7 +13,7 @@ export class StepperOverviewComponent {
 
   isLinear = false;
   myForm: Array<string>
-
+  applyLoanBoolean: boolean = false;
   constructor(
     public formService: FormService,
     private fb: FormBuilder,
@@ -27,6 +27,7 @@ export class StepperOverviewComponent {
   }
   applyLoan() {
     this.myForm;
+    this.applyLoanBoolean = true;
     this.sharedService.saveLoanApplication(this.myForm).subscribe(data => {
 
     }, error => {

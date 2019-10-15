@@ -1,20 +1,22 @@
 <form *ngIf="step" [formGroup]="step">
   <ng-template matStepLabel>Fill out your address</ng-template>
-  <mat-form-field>
-    <input matInput placeholder="Amount" (keyup)="currencyEntered($event.target.value)" formControlName="amount" required>
-  </mat-form-field>
+  <div fxLayout="column" fxLayoutAlign="start start">
+      <mat-form-field>
+          <input matInput placeholder="Amount" (keyup)="currencyEntered($event.target.value)" formControlName="amount" required>
+        </mat-form-field>
 
-  <mat-form-field>
-    <input matInput placeholder="Term" formControlName="term" required>
-  </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Term" formControlName="term" required>
+        </mat-form-field>
 
-  <mat-form-field>
-    <mat-select formControlName="usage" placeholder="Usage" style="min-width:200px;">
-      <mat-option [value]="us.name"
-        *ngFor="let us of usageList">
-        {{ us.name || 'Not Available' }}</mat-option>
-    </mat-select>
-  </mat-form-field>
+        <mat-form-field>
+          <mat-select formControlName="usage" placeholder="Usage" style="min-width:200px;">
+            <mat-option [value]="us.name"
+              *ngFor="let us of usageList">
+              {{ us.name || 'Not Available' }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+  </div>
 
   <!-- <mat-form-field *ngIf="step.value.usage === 'Other (Specify)'">
     <input matInput placeholder="Please specify the Usage" [(ngModel)]="otherUsage">
