@@ -87,7 +87,7 @@ public class NotificationResource {
 		try {
 			helper.setTo(personalDetails.geteMail());
 			helper.setText("Hi Customer Id: "+ personalDetails.getId()+ ",\n\n     Contratulations!!! We Offer Provied for Customer :" + personalDetails.getId() +"\n Rate of interest : 10% \n Loan Offered 50000 Euro, \n you selected installments 12 months, \n Your EMI would be : 5000 Euro \n\n Best Regards,\n Abhinay Neekhra");
-			helper.setSubject("Mail From Hackathon for Customer ID : "+personalDetails.geteMail());
+			helper.setSubject("Mail From Hackathon for Customer ID : "+personalDetails.getId());
 		} catch (MessagingException e) {
 			e.printStackTrace();
 			return "Error while sending mail ..";
