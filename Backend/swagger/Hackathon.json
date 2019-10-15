@@ -317,3 +317,6 @@ definitions:
       lastYearRevenue:
         type: number
         example: '1000000'
+      comRegister:
+        type: string
+        example: 'Commercial Register'
