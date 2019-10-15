@@ -36,10 +36,6 @@ export class PersonalDetailsComponent implements OnInit {
     this.formService.stepReady(this.step, 'one');
   }
 
-  change(title) {
-    this.step.patchValue({ extraName: title });
-  }
-
   ngOnInit() {
     this.sharedServices.getCountries().subscribe((countries) => {
       this.countries = countries;
