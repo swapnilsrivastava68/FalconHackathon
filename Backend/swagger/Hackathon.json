@@ -1,0 +1,218 @@
+swagger: '2.0'
+info:
+  description: This is a simple API
+  version: 1.0.0
+  title: Hackathon Project  
+  # APIs related to Loan functionalities 
+  contact:
+    email: falcon@hackathon.com
+
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+
+# tags are used for organizing operations
+tags:
+- name: Loan
+  description: Apply loan application, Gets Loan Application Status, Approve Loan, Scedule Loan payment, Gets Usage
+- name: Peronal Info
+  description: Gets Prsonal Details against Loan Application, User Notifications
+
+paths:
+  /loanapplication/{appId}:
+    get:
+      tags:
+      - Loan 
+      summary: Get loan application status against provided application Id
+      operationId: getLoanApplicationStatus
+      description: |
+       Get the loan application status against the provided loan application Id
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: appId
+        description: "Application Id
+        required: true
+        type: string
+      responses:
+        200:
+          description: Loan Account Details
+          schema:
+            type: object
+            items:
+              $ref: '#/definitions/LoanDetail'
+        400:
+          description: bad input parameter
+    
+  /loanApplications:
+    post:
+      tags:
+      - Loan
+      summary: Create Loan Account
+      operationId: createLoanAccount
+      description: To apply loan
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: LoanDetail
+        description: Apply for a Loan
+        schema:
+          $ref: '#/definitions/LoanDetail'
+      responses:
+        201:
+          description: Loan account created
+        400:
+          description: invalid input, object invalid
+        409:
+          description: Loan Account already exists
+          
+  /loanApproval/{appId}:  
+    put:
+      tags:
+      - Loan
+      summary: Update the loan status against provided Loan Application Id
+      operationId: doLoanApproval
+      description: To update the Loan Application Status
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: 
+        description: Apply for a Loan
+      responses:
+        201:
+          description: Loan account created
+        400:
+          description: invalid input, object invalid
+        409:
+          description: Loan Account already exists
+    
+    
+    
+    
+    
+  /getUsage:
+    get:
+      tags:
+      - Loan 
+      summary: Get a List of Usage
+      operationId: getAllUsage
+      description: |
+       Get all the usage
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Loan Account Details
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Usage'
+        400:
+          description: bad input parameter
+          
+definitions:
+  Usage:
+    type: object
+    required:
+    - id
+    - name
+    properties:
+      id:
+        type: integer
+        example: 123456
+      name:
+        type: string
+        example: 'current assets'
+        
+  LoanDetail:
+    type: object
+    required:
+    - id
+    - amount
+    - term
+    - usage
+    - personalDetail
+    - corporateDetail
+    properties:
+      id:
+        type: integer
+        example: 123456
+      amount:
+        type: number
+        example: 100000
+      term:
+        type: string
+        example: '240 Months'  
+      personalDetail:
+        type: object
+        items: 
+          $ref: '#/definitions/PersonalDetail' 
+      corporateDetail:
+        type: object
+        items: 
+          $ref: '#/definitions/CorporateDetail'     
+          
+  PersonalDetail:
+    type: object
+    required:
+    - id
+    - name
+    - address
+    - citizenship
+    - birthDate
+    - phone
+    - email
+    properties:
+      id:
+        type: integer
+        example: 222222
+      name:
+        type: string
+        example: ABC
+      citizenship:
+        type: string
+        example: India  
+      birthDate:
+        type: string
+        format: date-time
+        example: 2000-10-29              
+      phone:
+        type: string
+        example: '+ 999 999 4444'   
+      email:
+        type: string
+        format: email
+        example: 'abcd@gmail.com'   
+        
+  CorporateDetail:
+    type: object
+    required:
+    - id
+    - name
+    - address
+    - legalStructure
+    - lastYearRevenue
+    properties:
+      id:
+        type: string
+        example: '333333333'
+      name:
+        type: string
+        example: 'Falcon Corp'
+      address:
+        type: string
+        example: 'Electronics City, Bangalore'  
+      legalStructure:
+        type: string
+        example: 'LLP'          
+      lastYearRevenue:
+        type: number
+        example: '1000000'          
+https
