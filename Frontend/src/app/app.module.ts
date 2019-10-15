@@ -15,12 +15,18 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
+import { LoanStatusComponent } from './components/loan-status/loan-status.component';
+import { ApplyLoanComponent } from './components/apply-loan/apply-loan.component';
+import { ApplicationStatusComponent } from './components/application-status/application-status.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainNavComponent,
-    DashboardComponent
+    DashboardComponent,
+    LoanStatusComponent,
+    ApplyLoanComponent,
+    ApplicationStatusComponent
   ],
   imports: [
     BrowserModule,
