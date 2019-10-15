@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { map } from 'rxjs/operators';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-loan-status',
@@ -23,9 +24,20 @@ export class LoanStatusComponent implements OnInit {
     })
   );
 
-  constructor(private breakpointObserver: BreakpointObserver) { }
-
+  constructor(private breakpointObserver: BreakpointObserver,
+    private sharedService: SharedService) { }
+  public loanNumber: string = '';
+  public loanDetails: any;
+  public isDataFetched: boolean = false;
   ngOnInit() {
   }
-
+  checkLoanStatus() {
+    this.isDataFetched = false;
+    this.sharedService.getLoanStatus(+this.loanNumber).subscribe(res => {
+      this.loanDetails = res;
+      this.isDataFetched = true;
+    }, error => {
+      this.isDataFetched = false;
+    });
+  }
 }
