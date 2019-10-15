@@ -2,11 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormService } from '../form-service';
 
-export interface Food {
-  value: string;
-  viewValue: string;
-}
-
 @Component({
   selector: 'app-corporate-details',
   templateUrl: './corporate-details.component.html',
@@ -15,11 +10,6 @@ export interface Food {
 export class CorporateDetailsComponent implements OnInit {
 
   step: FormGroup;
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
-  ];
 
   constructor(
     private _formBuilder: FormBuilder,

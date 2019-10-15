@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { FormService } from '../form-service';
+import { SharedService } from '../../../../services/shared.service';
 
-export interface Food {
-  value: string;
-  viewValue: string;
+export interface Countries {
+  id: number;
+  name: string;
 }
 
 @Component({
@@ -15,15 +16,12 @@ export interface Food {
 export class PersonalDetailsComponent implements OnInit {
 
   step: FormGroup;
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
-  ];
+  countries: Countries[] = [];
 
   constructor(
     private _formBuilder: FormBuilder,
-    private formService: FormService
+    private formService: FormService,
+    private sharedServices: SharedService
   ) {
     this.step = this._formBuilder.group({
       firstName: ['', Validators.required],
@@ -38,6 +36,9 @@ export class PersonalDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.sharedServices.getCountries().subscribe((countries) => {
+      this.countries = countries;
+    });
   }
 
 }

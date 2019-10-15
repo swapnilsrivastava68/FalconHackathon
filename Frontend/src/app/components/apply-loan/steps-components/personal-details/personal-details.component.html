@@ -13,10 +13,10 @@
           <input matInput placeholder="Address" formControlName="lastName" required>
       </mat-form-field>
       <mat-form-field>
-        <mat-label>Favorite food</mat-label>
+        <mat-label>Citizenship</mat-label>
         <mat-select>
-          <mat-option *ngFor="let food of foods" [value]="food.value">
-            {{food.viewValue}}
+          <mat-option *ngFor="let country of countries" [value]="country.id">
+            {{country.name}}
           </mat-option>
         </mat-select>
       </mat-form-field>
