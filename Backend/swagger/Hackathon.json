@@ -76,7 +76,6 @@ paths:
       description: "Returns a single pet"
       operationId: "getPetById"
       produces:
-      - "application/xml"
       - "application/json"
       parameters:
       - name: "appId"
@@ -204,7 +203,6 @@ paths:
       description: "Gets the personal details asscoicated with Loan Application Id"
       operationId: getPersonalDetail
       produces:
-      - "application/xml"
       - "application/json"
       parameters:
       - name: "appId"
